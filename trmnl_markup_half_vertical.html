@@ -12,7 +12,9 @@
           <td class="py--3 lg:py--5 pl--4">
             <div class="title title--small lg:title--base font--bold mb--1" style="line-height: 1.2;">{{ day.main }}</div>
             {% if day.sides != "" %}
-              <div class="description text--xs lg:description--base" style="line-height: 1.2; opacity: 0.85;">{{ day.sides }}</div>
+              <div class="description text--xs lg:description--base mt--1" style="line-height: 1.2; opacity: 0.7;">
+                <span class="font--bold">Sides: </span>{{ day.sides }}
+              </div>
             {% endif %}
           </td>
         </tr>
