@@ -1,4 +1,30 @@
 {
   "school_name": "School Menu",
-  "days": []
+  "days": [
+    {
+      "date": "2026-08-17",
+      "main": "No Lunch",
+      "sides": ""
+    },
+    {
+      "date": "2026-08-18",
+      "main": "No Lunch",
+      "sides": ""
+    },
+    {
+      "date": "2026-08-19",
+      "main": "Cinnamon Glazed French Toast Sticks",
+      "sides": "Sausage Patty, Tater Tots, Teriyaki Beef Strips, Brown Rice, Steamed Broccoli, Celery Sticks, Fresh Fruit, Pears, Milk, 100% Juice"
+    },
+    {
+      "date": "2026-08-20",
+      "main": "Chicken Drumstick",
+      "sides": "Mashed Potatoes, Homemade Roll, WG, Turkey Sandwich, WG, Crinkle Fries, Steamed Carrots, Fresh Fruit, Strawberry Cup, Milk, Chocolate and Vanilla Pudding"
+    },
+    {
+      "date": "2026-08-21",
+      "main": "Chicken Sandwich, WG",
+      "sides": "Curly Fries, White Bean Chicken Chili, Cornbread, Side Salad, Tomato Slices, Fresh Fruit, Mandarin Oranges, Milk, Blueberries w/topping"
+    }
+  ]
 }
