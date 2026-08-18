@@ -1,30 +1,45 @@
 {
-  "school_name": "School Menu",
+  "school_name": "Oak Leaf",
   "days": [
     {
       "date": "2026-08-17",
-      "main": "No Lunch",
+      "main_1": "No Lunch",
+      "sides_1": "",
+      "main_2": "",
+      "sides_2": "",
       "sides": ""
     },
     {
       "date": "2026-08-18",
-      "main": "No Lunch",
+      "main_1": "No Lunch",
+      "sides_1": "",
+      "main_2": "",
+      "sides_2": "",
       "sides": ""
     },
     {
       "date": "2026-08-19",
-      "main": "Cinnamon Glazed French Toast Sticks",
-      "sides": "Sausage Patty, Tater Tots, Teriyaki Beef Strips, Brown Rice, Steamed Broccoli, Celery Sticks, Fresh Fruit, Pears, Milk, 100% Juice"
+      "main_1": "Cinnamon Glazed French Toast Sticks",
+      "sides_1": "Sausage Patty, Tater Tots",
+      "main_2": "Teriyaki Beef Strips",
+      "sides_2": "Brown Rice, Steamed Broccoli",
+      "sides": "Celery Sticks, Fresh Fruit, Pears, Milk, 100% Juice"
     },
     {
       "date": "2026-08-20",
-      "main": "Chicken Drumstick",
-      "sides": "Mashed Potatoes, Homemade Roll, WG, Turkey Sandwich, WG, Crinkle Fries, Steamed Carrots, Fresh Fruit, Strawberry Cup, Milk, Chocolate and Vanilla Pudding"
+      "main_1": "Chicken Drumstick",
+      "sides_1": "Mashed Potatoes, Homemade Roll, WG",
+      "main_2": "Turkey Sandwich, WG",
+      "sides_2": "Crinkle Fries",
+      "sides": "Steamed Carrots, Fresh Fruit, Strawberry Cup, Milk, Chocolate and Vanilla Pudding"
     },
     {
       "date": "2026-08-21",
-      "main": "Chicken Sandwich, WG",
-      "sides": "Curly Fries, White Bean Chicken Chili, Cornbread, Side Salad, Tomato Slices, Fresh Fruit, Mandarin Oranges, Milk, Blueberries w/topping"
+      "main_1": "Chicken Sandwich, WG",
+      "sides_1": "Curly Fries",
+      "main_2": "White Bean Chicken Chili",
+      "sides_2": "Cornbread",
+      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Mandarin Oranges, Milk, Blueberries w/topping"
     }
   ]
 }

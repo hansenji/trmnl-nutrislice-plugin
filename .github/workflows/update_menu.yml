@@ -33,7 +33,66 @@ jobs:
           if [ -z "$SCHOOL" ]; then echo "Error: NUTRISLICE_SCHOOL_ID variable is not set" && exit 1; fi
 
           curl -s "https://${DISTRICT}.api.nutrislice.com/menu/api/weeks/school/${SCHOOL}/menu-type/${MEAL_TYPE}/${FETCH_DATE}/?format=json" > raw.json
-          jq --arg school_name "School Menu" '{school_name: $school_name, days: [.days[] | select(.menu_items | length > 0) | {date: .date, main: ([.menu_items[] | select(.food != null) | .food.name][0] // "No Lunch"), sides: ([.menu_items[] | select(.food != null) | .food.name][1:] | join(", "))}]}' raw.json > menu.json
+          SCHOOL="${SCHOOL}" node -e "
+            const fs = require('fs');
+            const raw = JSON.parse(fs.readFileSync('raw.json', 'utf8'));
+            const days = (raw.days || []).filter(d => d.menu_items && d.menu_items.length > 0).map(day => {
+              let currentSection = 'General';
+              const sections = {};
+              day.menu_items.forEach(item => {
+                if (item.food === null && item.text && item.text.trim() !== '') {
+                  currentSection = item.text.trim();
+                } else if (item.food !== null && item.food.name) {
+                  if (!sections[currentSection]) sections[currentSection] = [];
+                  sections[currentSection].push(item.food.name);
+                }
+              });
+              const optionSectionKeys = Object.keys(sections).filter(key => {
+                const lowerKey = key.toLowerCase();
+                return !lowerKey.includes('side') && !lowerKey.includes('general') && !lowerKey.includes('milk') && !lowerKey.includes('beverage');
+              });
+              const generalSidesKeys = Object.keys(sections).filter(key => {
+                const lowerKey = key.toLowerCase();
+                return lowerKey.includes('side') || lowerKey.includes('general') || lowerKey.includes('milk') || lowerKey.includes('beverage');
+              });
+              let main_1 = '';
+              let sides_1 = '';
+              let main_2 = '';
+              let sides_2 = '';
+              const generalSidesList = [];
+              generalSidesKeys.forEach(key => {
+                generalSidesList.push(...sections[key]);
+              });
+              const sides = generalSidesList.join(', ');
+              if (optionSectionKeys.length >= 1) {
+                const key1 = optionSectionKeys[0];
+                main_1 = sections[key1][0] || '';
+                sides_1 = sections[key1].slice(1).join(', ');
+                if (optionSectionKeys.length >= 2) {
+                  const key2 = optionSectionKeys[1];
+                  main_2 = sections[key2][0] || '';
+                  sides_2 = sections[key2].slice(1).join(', ');
+                }
+              } else {
+                const allKeys = Object.keys(sections);
+                if (allKeys.length >= 1) {
+                  const key1 = allKeys[0];
+                  main_1 = sections[key1][0] || '';
+                  sides_1 = sections[key1].slice(1).join(', ');
+                }
+              }
+              return {
+                date: day.date,
+                main_1: main_1 || 'No Lunch',
+                sides_1,
+                main_2,
+                sides_2,
+                sides
+              };
+            });
+            const schoolName = raw.school_name || (process.env.SCHOOL || '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'School Menu';
+            fs.writeFileSync('menu.json', JSON.stringify({ school_name: schoolName, days }, null, 2));
+          "
           echo "Generated menu.json:"
           cat menu.json
           rm raw.json

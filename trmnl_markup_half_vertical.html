@@ -8,12 +8,30 @@
             <div class="font--bold text--lg lg:title--base" style="line-height: 1.1;">{{ day.date | date: "%a" | upcase }}</div>
             <div class="label text--sm lg:text--lg" style="line-height: 1.1;">{{ day.date | date: "%m/%d" }}</div>
           </td>
-          <!-- Column 2: Main Dish & Sides -->
+          <!-- Column 2: Options & Sides -->
           <td class="py--3 lg:py--5 pl--4">
-            <div class="title title--small lg:title--base font--bold mb--1" style="line-height: 1.2;">{{ day.main }}</div>
+            <!-- Option 1 -->
+            <div>
+              <span class="title title--small lg:title--base font--bold">{{ day.main_1 }}</span>
+              {% if day.sides_1 != "" %}
+                <span class="description text--xs lg:description--base opacity--80"> ({{ day.sides_1 }})</span>
+              {% endif %}
+            </div>
+            
+            <!-- Option 2 -->
+            {% if day.main_2 != "" %}
+              <div class="mt--1">
+                <span class="title title--small lg:title--base font--bold">{{ day.main_2 }}</span>
+                {% if day.sides_2 != "" %}
+                  <span class="description text--xs lg:description--base opacity--80"> ({{ day.sides_2 }})</span>
+                {% endif %}
+              </div>
+            {% endif %}
+            
+            <!-- Common Sides -->
             {% if day.sides != "" %}
-              <div class="description text--xs lg:description--base mt--1" style="line-height: 1.2; opacity: 0.7;">
-                <span class="font--bold">Sides: </span>{{ day.sides }}
+              <div class="description text--xs lg:description--base mt--2 opacity--70">
+                <span class="font--bold">Common Sides: </span>{{ day.sides }}
               </div>
             {% endif %}
           </td>

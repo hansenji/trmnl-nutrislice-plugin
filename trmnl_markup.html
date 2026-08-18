@@ -4,10 +4,28 @@
       <div class="outline p--3 text--center h--full">
         <div class="font--bold text--lg lg:title--base mb--0" style="line-height: 1.1;">{{ day.date | date: "%a" | upcase }}</div>
         <div class="label text--xs lg:text--sm mb--3" style="line-height: 1.1;">{{ day.date | date: "%m/%d" }}</div>
-        <div class="title title--small lg:title--base font--bold mb--2" style="line-height: 1.2;">{{ day.main }}</div>
+        
+        <!-- Option 1 -->
+        <div class="title title--small lg:title--base font--bold mb--1" style="line-height: 1.2;">{{ day.main_1 }}</div>
+        {% if day.sides_1 != "" %}
+          <div class="description text--xs lg:description--base mb--2" style="line-height: 1.2; opacity: 0.85;">{{ day.sides_1 }}</div>
+        {% endif %}
+        
+        <!-- Option 2 -->
+        {% if day.main_2 != "" %}
+          <div class="divider my--2"></div>
+          <div class="title title--small lg:title--base font--bold mb--1" style="line-height: 1.2;">{{ day.main_2 }}</div>
+          {% if day.sides_2 != "" %}
+            <div class="description text--xs lg:description--base mb--2" style="line-height: 1.2; opacity: 0.85;">{{ day.sides_2 }}</div>
+          {% endif %}
+        {% endif %}
+        
+        <!-- Common Sides -->
         {% if day.sides != "" %}
           <div class="divider my--2"></div>
-          <div class="description text--xs lg:description--base" style="line-height: 1.2; opacity: 0.85;">{{ day.sides }}</div>
+          <div class="description text--xxs lg:description--base" style="line-height: 1.2; opacity: 0.65;">
+            <span class="font--bold">Sides:</span> {{ day.sides }}
+          </div>
         {% endif %}
       </div>
     {% endfor %}

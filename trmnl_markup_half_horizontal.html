@@ -4,7 +4,12 @@
       <div class="outline p--2 text--center h--full">
         <div class="font--bold text--md lg:text--lg mb--0" style="line-height: 1.1;">{{ day.date | date: "%a" | upcase }}</div>
         <div class="label text--xs lg:text--sm mb--2" style="line-height: 1.1;">{{ day.date | date: "%m/%d" }}</div>
-        <div class="title title--small lg:title--base font--bold clamp--3" style="line-height: 1.2;">{{ day.main }}</div>
+        
+        <div class="title title--small lg:title--base font--bold clamp--2" style="line-height: 1.2;">{{ day.main_1 }}</div>
+        {% if day.main_2 != "" %}
+          <div class="divider my--1"></div>
+          <div class="title title--small lg:title--base font--bold clamp--2" style="line-height: 1.2;">{{ day.main_2 }}</div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>

@@ -31,20 +31,67 @@ module.exports = async (req, res) => {
       days: data.days
         .filter(day => day.menu_items && day.menu_items.length > 0)
         .map(day => {
-          const mainFood = day.menu_items.find(item => item.food !== null);
+          let currentSection = "General";
+          const sections = {};
           
-          const sidesList = day.menu_items
-            .filter(item => item.food !== null && item.food.name !== (mainFood ? mainFood.food.name : ""))
-            .map(item => item.food.name);
-          let sides = sidesList.join(", ");
-          if (sides.length > 200) {
-            sides = sides.substring(0, 200) + "...";
+          day.menu_items.forEach(item => {
+            if (item.food === null && item.text && item.text.trim() !== "") {
+              currentSection = item.text.trim();
+            } else if (item.food !== null && item.food.name) {
+              if (!sections[currentSection]) {
+                sections[currentSection] = [];
+              }
+              sections[currentSection].push(item.food.name);
+            }
+          });
+
+          const optionSectionKeys = Object.keys(sections).filter(key => {
+            const lowerKey = key.toLowerCase();
+            return !lowerKey.includes("side") && !lowerKey.includes("general") && !lowerKey.includes("milk") && !lowerKey.includes("beverage");
+          });
+
+          const generalSidesKeys = Object.keys(sections).filter(key => {
+            const lowerKey = key.toLowerCase();
+            return lowerKey.includes("side") || lowerKey.includes("general") || lowerKey.includes("milk") || lowerKey.includes("beverage");
+          });
+
+          let main_1 = "";
+          let sides_1 = "";
+          let main_2 = "";
+          let sides_2 = "";
+
+          const generalSidesList = [];
+          generalSidesKeys.forEach(key => {
+            generalSidesList.push(...sections[key]);
+          });
+          const sides = generalSidesList.join(", ");
+
+          if (optionSectionKeys.length >= 1) {
+            const key1 = optionSectionKeys[0];
+            main_1 = sections[key1][0] || "";
+            sides_1 = sections[key1].slice(1).join(", ");
+            
+            if (optionSectionKeys.length >= 2) {
+              const key2 = optionSectionKeys[1];
+              main_2 = sections[key2][0] || "";
+              sides_2 = sections[key2].slice(1).join(", ");
+            }
+          } else {
+            const allKeys = Object.keys(sections);
+            if (allKeys.length >= 1) {
+              const key1 = allKeys[0];
+              main_1 = sections[key1][0] || "";
+              sides_1 = sections[key1].slice(1).join(", ");
+            }
           }
 
           return {
             date: day.date,
-            main: mainFood ? mainFood.food.name : "No Lunch",
-            sides: sides
+            main_1: main_1 || "No Lunch",
+            sides_1,
+            main_2,
+            sides_2,
+            sides
           };
         })
     };

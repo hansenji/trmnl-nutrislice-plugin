@@ -20,7 +20,12 @@
 
           <!-- Column 2: Meal Name -->
           <td class="pl--0 pb--1 lg:pb--3 {% if forloop.first %}pt--1 lg:pt--4{% else %}pt--0 lg:pt--3{% endif %}">
-            <div class="font--bold text--sm lg:title--base clamp--2 lg:clamp--1" style="line-height: 1.1;">{{ day.main }}</div>
+            <div class="font--bold text--sm lg:title--base clamp--2" style="line-height: 1.1;">
+              {{ day.main_1 }}
+              {% if day.main_2 != "" %}
+                / {{ day.main_2 }}
+              {% endif %}
+            </div>
           </td>
         </tr>
       {% endfor %}
