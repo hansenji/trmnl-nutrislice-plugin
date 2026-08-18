@@ -26,13 +26,14 @@ jobs:
           
           DISTRICT="${{ vars.NUTRISLICE_DISTRICT }}"
           SCHOOL="${{ vars.NUTRISLICE_SCHOOL_ID }}"
+          MEAL_TYPE="${{ vars.MEAL_TYPE }}"
+          [ -z "$MEAL_TYPE" ] && MEAL_TYPE="lunch"
           
           if [ -z "$DISTRICT" ]; then echo "Error: NUTRISLICE_DISTRICT variable is not set" && exit 1; fi
           if [ -z "$SCHOOL" ]; then echo "Error: NUTRISLICE_SCHOOL_ID variable is not set" && exit 1; fi
 
-          echo "Fetching menu for $DISTRICT / $SCHOOL on date: $FETCH_DATE"
-          curl -s "https://${DISTRICT}.api.nutrislice.com/menu/api/weeks/school/${SCHOOL}/menu-type/lunch/${FETCH_DATE}/?format=json" > raw.json
-          jq --arg school_name "School Menu" '{school_name: $school_name, days: [.days[] | select(.menu_items | length > 0) | {date: .date, main: ([.menu_items[] | select(.food != null) | .food.name][0] // "No Lunch"), image: (([.menu_items[] | select(.image != null and .image != "") | .image][0]) // ([.menu_items[] | select(.food.image_url != null and .food.image_url != "") | .food.image_url][0]) // ""), sides: ([.menu_items[] | select(.food != null) | .food.name][1:] | join(", "))}]}' raw.json > menu.json
+          curl -s "https://${DISTRICT}.api.nutrislice.com/menu/api/weeks/school/${SCHOOL}/menu-type/${MEAL_TYPE}/${FETCH_DATE}/?format=json" > raw.json
+          jq --arg school_name "School Menu" '{school_name: $school_name, days: [.days[] | select(.menu_items | length > 0) | {date: .date, main: ([.menu_items[] | select(.food != null) | .food.name][0] // "No Lunch"), sides: ([.menu_items[] | select(.food != null) | .food.name][1:] | join(", "))}]}' raw.json > menu.json
           echo "Generated menu.json:"
           cat menu.json
           rm raw.json

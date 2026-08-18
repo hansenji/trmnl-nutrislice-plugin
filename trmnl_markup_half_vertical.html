@@ -1,26 +1,24 @@
-<div class="layout layout--col layout--top pt--0 px--5 pb--5">
-  <div class="w-full">
-    <table class="table">
-      <tbody>
-        {% for day in days %}
-          <tr>
-            <td class="w--20 text--center py--4 lg:py--8">
-              <div class="font--bold text--lg lg:title--base" style="line-height: 1.1;">{{ day.date | date: "%a" | upcase }}</div>
-              <div class="label text--md lg:text--xl">{{ day.date | date: "%m/%d" }}</div>
-            </td>
-            <td class="w--30 lg:w--40 text--center py--4 lg:py--8 px--2">
-              {% if day.image != "" %}
-                <img src="{{ day.image }}" class="image image--contain h--[10cqh] lg:h--[18cqh]" />
-              {% endif %}
-            </td>
-            <td class="w--50 lg:w--40 py--4 lg:py--8">
-              <div class="title text--lg lg:title--base">{{ day.main }}</div>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<div class="layout layout--top pt--2 px--4 pb--4">
+  <table class="table w--full m--0">
+    <tbody>
+      {% for day in days %}
+        <tr>
+          <!-- Column 1: Date & Day -->
+          <td class="w--25 text--center py--3 lg:py--5">
+            <div class="font--bold text--lg lg:title--base" style="line-height: 1.1;">{{ day.date | date: "%a" | upcase }}</div>
+            <div class="label text--sm lg:text--lg" style="line-height: 1.1;">{{ day.date | date: "%m/%d" }}</div>
+          </td>
+          <!-- Column 2: Main Dish & Sides -->
+          <td class="py--3 lg:py--5 pl--4">
+            <div class="title title--small lg:title--base font--bold mb--1" style="line-height: 1.2;">{{ day.main }}</div>
+            {% if day.sides != "" %}
+              <div class="description text--xs lg:description--base" style="line-height: 1.2; opacity: 0.85;">{{ day.sides }}</div>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 <div class="title_bar">

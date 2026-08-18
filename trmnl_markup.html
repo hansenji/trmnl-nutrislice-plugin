@@ -1,18 +1,13 @@
-<div class="layout layout--top pt--1 px--5 pb--5">
-  <div class="grid grid--cols-5 gap--10">
+<div class="layout layout--top pt--3 px--4 pb--4">
+  <div class="grid grid--cols-5 gap--6 h--full">
     {% for day in days %}
-      <div class="text--center">
-          <div class="font--bold text--xl lg:title--large" style="line-height: 1;">{{ day.date | date: "%A" | upcase }}</div>
-          <div class="label--underline mb--0 text--lg lg:title--base" style="line-height: 1;">{{ day.date | date: "%m/%d" }}</div>
-
-          {% if day.image != "" %}
-            <img src="{{ day.image }}" class="image image--contain h--[30cqh] lg:portrait:h--[20cqh] mt--2 mb--2 w--full" />
-          {% endif %}
-
-          <div class="title title--small lg:title--base font--bold mb--1" style="line-height: 1.1;">{{ day.main }}</div>
-          <div class="description text--md lg:description--base" style="line-height: 1.1;">
-            {{ day.sides }}
-          </div>
+      <div class="outline p--3 text--center h--full">
+        <div class="font--bold text--lg lg:title--base mb--0" style="line-height: 1.1;">{{ day.date | date: "%a" | upcase }}</div>
+        <div class="label text--xs lg:text--sm mb--3" style="line-height: 1.1;">{{ day.date | date: "%m/%d" }}</div>
+        <div class="title title--small lg:title--base font--bold mb--2" style="line-height: 1.2;">{{ day.main }}</div>
+        {% if day.sides != "" %}
+          <div class="description text--xs lg:description--base" style="line-height: 1.2; opacity: 0.85;">{{ day.sides }}</div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>

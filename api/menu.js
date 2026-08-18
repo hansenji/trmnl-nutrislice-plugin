@@ -1,10 +1,12 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-  const { district, school, meal_type } = req.query;
+  const district = req.query.district || process.env.NUTRISLICE_DISTRICT;
+  const school = req.query.school || process.env.NUTRISLICE_SCHOOL_ID;
+  const meal_type = req.query.meal_type || process.env.MEAL_TYPE || 'lunch';
 
-  if (!district || !school || !meal_type) {
-    return res.status(400).json({ error: 'Missing parameters: district, school, and meal_type are required.' });
+  if (!district || !school) {
+    return res.status(400).json({ error: 'Missing parameters or environment variables: district and school are required.' });
   }
 
   const now = new Date();
@@ -31,20 +33,18 @@ module.exports = async (req, res) => {
         .map(day => {
           const mainFood = day.menu_items.find(item => item.food !== null);
           
-          // Prioritize specific banner images over generic food images
-          const specificImage = day.menu_items.find(item => item.image && item.image !== "")?.image;
-          const genericImage = day.menu_items.find(item => item.food?.image_url && item.food.image_url !== "")?.food.image_url;
-          const selectedImage = specificImage || genericImage || "";
+          const sidesList = day.menu_items
+            .filter(item => item.food !== null && item.food.name !== (mainFood ? mainFood.food.name : ""))
+            .map(item => item.food.name);
+          let sides = sidesList.join(", ");
+          if (sides.length > 200) {
+            sides = sides.substring(0, 200) + "...";
+          }
 
           return {
             date: day.date,
             main: mainFood ? mainFood.food.name : "No Lunch",
-            image: selectedImage,
-            sides: day.menu_items
-              .filter(item => item.food !== null && item.food.name !== (mainFood ? mainFood.food.name : ""))
-              .map(item => item.food.name)
-              .join(", ")
-              .substring(0, 200) + (day.menu_items.filter(item => item.food !== null && item.food.name !== (mainFood ? mainFood.food.name : "")).map(item => item.food.name).join(", ").length > 200 ? "..." : "")
+            sides: sides
           };
         })
     };
