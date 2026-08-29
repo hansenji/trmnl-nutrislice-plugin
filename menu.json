@@ -2,44 +2,44 @@
   "school_name": "Oak Leaf",
   "days": [
     {
-      "date": "2026-08-24",
+      "date": "2026-08-31",
       "main_1": "Cheese Pizza, fresh",
       "sides_1": "Hawaiian Pizza, Pepperoni Pizza, fresh, Veggie Pizza, fresh",
-      "main_2": "Deli Ham",
-      "sides_2": "Cheez-it Cracker, String Cheese",
-      "sides": "Beans, Carrots, Celery Sticks, Fresh Fruit, Strawberry Cup, Milk, Trail Mix"
+      "main_2": "Soft Pretzel",
+      "sides_2": "Cheese Sauce",
+      "sides": "Beans, Spinach, Carrots, Fresh Fruit, Applesauce, Milk, SideKicks Frozen Fruit Cups"
     },
     {
-      "date": "2026-08-25",
-      "main_1": "Macaroni and Cheese",
-      "sides_1": "",
-      "main_2": "Chicken Nugget Bites",
-      "sides_2": "Crinkle Fries",
-      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Mandarin Oranges, Milk, Wacky Cake"
-    },
-    {
-      "date": "2026-08-26",
-      "main_1": "Waffles",
-      "sides_1": "Sausage Patty, Tater Tots",
-      "main_2": "Spaghetti with Ground Beef",
+      "date": "2026-09-01",
+      "main_1": "Cheese Pizza Ripper",
+      "sides_1": "Pepperoni Pizza Ripper, Vanilla Yogurt",
+      "main_2": "Chicken Alfredo",
       "sides_2": "Homemade Breadstick",
-      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Peaches, Milk, 100% Juice"
+      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Tropical Fruit, Canned, Milk, Snickerdoodle Cookie"
     },
     {
-      "date": "2026-08-27",
-      "main_1": "Country Fried Steak",
-      "sides_1": "Red Mashed Potatoes, Homemade Roll",
-      "main_2": "Bean & Cheese Burrito",
-      "sides_2": "Fiesta Rice",
-      "sides": "Celery Sticks, Steamed Broccoli, Fresh Fruit, Mixed Berry Cup, Milk, Jello"
+      "date": "2026-09-02",
+      "main_1": "Pancake Chicken Sausage Stick",
+      "sides_1": "Vanilla Yogurt",
+      "main_2": "Pigs in a Blanket",
+      "sides_2": "",
+      "sides": "Tater Tots, Cucumber Slices, Fresh Fruit, Pears, Milk, 100% Juice"
     },
     {
-      "date": "2026-08-28",
-      "main_1": "Cheesy Nachos",
-      "sides_1": "Taco Meat, Beans",
-      "main_2": "BBQ Rib Sandwich",
+      "date": "2026-09-03",
+      "main_1": "Soft Shell Taco",
+      "sides_1": "Hard Shell Taco, Beans",
+      "main_2": "Fish Nuggets",
       "sides_2": "Curly Fries",
-      "sides": "Cucumber Slices, Fresh Fruit, Applesauce, Milk, Yogurt Fruit Cup"
+      "sides": "Steamed Carrots, Fresh Fruit, Strawberry Cup, Milk, Chocolate and Vanilla Pudding"
+    },
+    {
+      "date": "2026-09-04",
+      "main_1": "Flatbread Taco",
+      "sides_1": "Corn",
+      "main_2": "Mini Corn Dogs",
+      "sides_2": "Crinkle Fries",
+      "sides": "Carrots, Fresh Fruit, Mandarin Oranges, Milk, Blueberries w/topping"
     }
   ]
 }
