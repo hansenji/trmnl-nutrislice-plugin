@@ -2,44 +2,44 @@
   "school_name": "Oak Leaf",
   "days": [
     {
-      "date": "2026-10-12",
-      "main_1": "Cheese Pizza, fresh",
-      "sides_1": "Hawaiian Pizza, Pepperoni Pizza, fresh, Veggie Pizza, fresh",
-      "main_2": "Soft Pretzel",
-      "sides_2": "Cheese Sauce",
-      "sides": "Beans, Spinach, Carrots, Fresh Fruit, Applesauce, Milk, SideKicks Frozen Fruit Cups"
-    },
-    {
-      "date": "2026-10-13",
-      "main_1": "Cheese Pizza Ripper",
-      "sides_1": "Pepperoni Pizza Ripper, Vanilla Yogurt",
-      "main_2": "Chicken Alfredo",
-      "sides_2": "Homemade Breadstick",
-      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Tropical Fruit, Canned, Milk, Crispy No Bake Cookie"
-    },
-    {
-      "date": "2026-10-14",
-      "main_1": "Pancake Chicken Sausage Stick",
-      "sides_1": "Cherry Vanilla Yogurt, Strawberry Banana Yogurt",
-      "main_2": "Pigs in a Blanket",
+      "date": "2026-10-19",
+      "main_1": "No Lunch",
+      "sides_1": "",
+      "main_2": "",
       "sides_2": "",
-      "sides": "Tater Tots, Cucumber Slices, Fresh Fruit, Pears, Milk, 100% Juice"
+      "sides": ""
     },
     {
-      "date": "2026-10-15",
-      "main_1": "Soft Shell Taco",
-      "sides_1": "Hard Shell Taco, Beans",
-      "main_2": "Fish Nuggets",
-      "sides_2": "Curly Fries",
-      "sides": "Steamed Carrots, Fresh Fruit, Strawberry Cup, Milk, Chocolate and Vanilla Pudding"
+      "date": "2026-10-20",
+      "main_1": "No Lunch",
+      "sides_1": "",
+      "main_2": "",
+      "sides_2": "",
+      "sides": ""
     },
     {
-      "date": "2026-10-16",
-      "main_1": "Flatbread Taco",
-      "sides_1": "Corn",
-      "main_2": "Mini Corn Dogs",
-      "sides_2": "Crinkle Fries",
-      "sides": "Carrots, Fresh Fruit, Mandarin Oranges, Milk, Blueberries w/topping"
+      "date": "2026-10-21",
+      "main_1": "No Lunch",
+      "sides_1": "",
+      "main_2": "",
+      "sides_2": "",
+      "sides": ""
+    },
+    {
+      "date": "2026-10-22",
+      "main_1": "No Lunch",
+      "sides_1": "",
+      "main_2": "",
+      "sides_2": "",
+      "sides": ""
+    },
+    {
+      "date": "2026-10-23",
+      "main_1": "No Lunch",
+      "sides_1": "",
+      "main_2": "",
+      "sides_2": "",
+      "sides": ""
     }
   ]
 }
