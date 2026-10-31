@@ -2,44 +2,44 @@
   "school_name": "Oak Leaf",
   "days": [
     {
-      "date": "2026-10-26",
+      "date": "2026-11-02",
       "main_1": "Cheese Pizza, fresh",
       "sides_1": "Hawaiian Pizza, Pepperoni Pizza, fresh, Veggie Pizza, fresh",
-      "main_2": "Cheese Quesadilla",
-      "sides_2": "Tater Tots",
-      "sides": "String Cheese, Beans, Fresh Fruit, Mixed Berry Cup, Milk, Trail Mix, Carrots"
+      "main_2": "Grilled Cheese Sandwich",
+      "sides_2": "Waffle Fries",
+      "sides": "Beans, Broccoli Florets, Celery Sticks, Fresh Fruit, Tropical Fruit, Canned, Milk, SideKicks Frozen Fruit Cups"
     },
     {
-      "date": "2026-10-27",
-      "main_1": "Traveling Tacos",
-      "sides_1": "",
-      "main_2": "Mini Cheese Calzones",
-      "sides_2": "Mini Pepperoni Calzones, Tater Tots",
-      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Pineapple, Milk, Brownie, Brownie w/Frosting"
+      "date": "2026-11-03",
+      "main_1": "Lasagna",
+      "sides_1": "Homemade Breadstick",
+      "main_2": "Chicken Wrap",
+      "sides_2": "Curly Fries",
+      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Peach Cup, Milk, Pumpkin Chocolate Chip Cookie"
     },
     {
-      "date": "2026-10-28",
-      "main_1": "Pancake Griddle Sandwich",
-      "sides_1": "Waffle Griddle Sandwich, Tater Tots",
-      "main_2": "Spaghetti with Ground Beef",
-      "sides_2": "Homemade Breadstick",
-      "sides": "Side Salad, Tomato Slices, Fresh Fruit, Pears, Milk, 100% Juice"
+      "date": "2026-11-04",
+      "main_1": "Pancakes",
+      "sides_1": "Sausage Patty, Tater Tots",
+      "main_2": "Soft Shell Taco",
+      "sides_2": "Hard Shell Taco, Beans",
+      "sides": "Carrots, Fresh Fruit, Pears, Milk, 100% Juice"
     },
     {
-      "date": "2026-10-29",
-      "main_1": "Popcorn Chicken Bowl",
-      "sides_1": "Corn, Homemade Roll",
-      "main_2": "Hamburger",
-      "sides_2": "Crinkle Fries",
-      "sides": "Steamed Broccoli, Fresh Fruit, Peach Cup, Milk, Jello"
+      "date": "2026-11-05",
+      "main_1": "Totchos",
+      "sides_1": "Taco Meat, Fiesta Rice",
+      "main_2": "Ravioli in Tomato Meat Sauce",
+      "sides_2": "Homemade Roll",
+      "sides": "Carrots, Corn, Fresh Fruit, Strawberry Cup, Milk, Chocolate and Vanilla Pudding"
     },
     {
-      "date": "2026-10-30",
-      "main_1": "Hot Ham & Cheese Sandwich",
-      "sides_1": "Crinkle Fries",
-      "main_2": "Macaroni and Cheese",
-      "sides_2": "Green Beans",
-      "sides": "Cucumber Slices, Fresh Fruit, Applesauce, Milk, Yogurt Fruit Cup"
+      "date": "2026-11-06",
+      "main_1": "Jordan Sub Sandwich",
+      "sides_1": "Shoestring Fries",
+      "main_2": "Mandarin Orange Chicken",
+      "sides_2": "Brown Rice, Steamed Broccoli",
+      "sides": "Cucumber Slices, Fresh Fruit, Mandarin Oranges, Milk, Blueberries w/topping"
     }
   ]
 }
